@@ -8,8 +8,13 @@ import Main from "../layout/Main";
 const routes = createBrowserRouter([
     {
         path: '/', element: <Main />, errorElement: <ErrorPage />, children: [
-            { path: '/', element: <Home /> },
-            { path: '/home', element: <Home /> }
+            {
+                path: '/', element: <Home />,
+                loader: () => fetch('http://localhost:5000/category/computer-science')
+            },
+            {
+                path: '/home', element: <Home />,
+            }
         ]
     }
 ])
