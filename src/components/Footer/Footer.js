@@ -78,15 +78,15 @@ const Footer = () => {
                         </div>
                         <div>
                             <p className="font-semibold tracking-wide text-teal-accent-400">
-                                Cherry
+                                Quick Link
                             </p>
                             <ul className="mt-2 space-y-2">
                                 <li>
                                     <a
-                                        href="/"
+                                        href="/courses"
                                         className="transition-colors duration-300 text-deep-purple-50 hover:text-teal-accent-400"
                                     >
-                                        Web
+                                        Courses
                                     </a>
                                 </li>
                                 <li>
@@ -94,7 +94,7 @@ const Footer = () => {
                                         href="/"
                                         className="transition-colors duration-300 text-deep-purple-50 hover:text-teal-accent-400"
                                     >
-                                        eCommerce
+                                        FAQ
                                     </a>
                                 </li>
                                 <li>
@@ -102,7 +102,7 @@ const Footer = () => {
                                         href="/"
                                         className="transition-colors duration-300 text-deep-purple-50 hover:text-teal-accent-400"
                                     >
-                                        Business
+                                        Blog
                                     </a>
                                 </li>
                                 <li>
@@ -110,7 +110,7 @@ const Footer = () => {
                                         href="/"
                                         className="transition-colors duration-300 text-deep-purple-50 hover:text-teal-accent-400"
                                     >
-                                        Entertainment
+                                        Sing In
                                     </a>
                                 </li>
                                 <li>
@@ -118,14 +118,14 @@ const Footer = () => {
                                         href="/"
                                         className="transition-colors duration-300 text-deep-purple-50 hover:text-teal-accent-400"
                                     >
-                                        Portfolio
+                                        Sing Up
                                     </a>
                                 </li>
                             </ul>
                         </div>
                         <div>
                             <p className="font-semibold tracking-wide text-teal-accent-400">
-                                Apples
+                                Help Center
                             </p>
                             <ul className="mt-2 space-y-2">
                                 <li>
@@ -133,7 +133,7 @@ const Footer = () => {
                                         href="/"
                                         className="transition-colors duration-300 text-deep-purple-50 hover:text-teal-accent-400"
                                     >
-                                        Media
+                                        Support
                                     </a>
                                 </li>
                                 <li>
@@ -141,7 +141,7 @@ const Footer = () => {
                                         href="/"
                                         className="transition-colors duration-300 text-deep-purple-50 hover:text-teal-accent-400"
                                     >
-                                        Brochure
+                                        Get Help
                                     </a>
                                 </li>
                                 <li>
@@ -149,7 +149,7 @@ const Footer = () => {
                                         href="/"
                                         className="transition-colors duration-300 text-deep-purple-50 hover:text-teal-accent-400"
                                     >
-                                        Nonprofit
+                                        Privacy Policy
                                     </a>
                                 </li>
                                 <li>
@@ -172,41 +172,21 @@ const Footer = () => {
                         </div>
                         <div>
                             <p className="font-semibold tracking-wide text-teal-accent-400">
-                                Business
+                                Contact Info
                             </p>
                             <ul className="mt-2 space-y-2">
                                 <li>
-                                    <a
-                                        href="/"
-                                        className="transition-colors duration-300 text-deep-purple-50 hover:text-teal-accent-400"
-                                    >
-                                        Infopreneur
-                                    </a>
+                                    Address: Kushtia, Bherama, 7000 Khulna, Bangladesh
                                 </li>
                                 <li>
-                                    <a
-                                        href="/"
-                                        className="transition-colors duration-300 text-deep-purple-50 hover:text-teal-accent-400"
-                                    >
-                                        Personal
-                                    </a>
+
+                                    Call Us: +8801401816162
+
                                 </li>
                                 <li>
-                                    <a
-                                        href="/"
-                                        className="transition-colors duration-300 text-deep-purple-50 hover:text-teal-accent-400"
-                                    >
-                                        Wiki
-                                    </a>
+                                    Email: iamchonchol94@gmail.com
                                 </li>
-                                <li>
-                                    <a
-                                        href="/"
-                                        className="transition-colors duration-300 text-deep-purple-50 hover:text-teal-accent-400"
-                                    >
-                                        Forum
-                                    </a>
-                                </li>
+
                             </ul>
                         </div>
                     </div>
