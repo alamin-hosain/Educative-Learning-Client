@@ -1,0 +1,27 @@
+.courses {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+
+}
+
+@media screen and (max-width: 768px) {
+
+    .courses {
+        display: flex;
+        flex-direction: column;
+    }
+
+
+    .lefside {
+        text-align: center;
+        padding: 10px;
+    }
+
+    .under-order-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 13px;
+        justify-content: center;
+        align-items: center;
+    }
+}
