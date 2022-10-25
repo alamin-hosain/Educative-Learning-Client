@@ -120,10 +120,7 @@ const Blog = () => {
                             <p className="text-sm text-gray-900">
                                 The Node.js run-time environment includes everything you need to execute a program written in JavaScrip. Node.js came into existence when the original developers of JavaScript extended it from something you could only run in the browser to something you could run on your machine as a standalone application.
                                 <br />
-                                <span className='my-6'>
-                                    1. Node.js Architecture: Node.js is made of Chrome V8 engine which is written in C++ and Libuv which is a multi-platform C library that provides support for asynchronous I/O based events on event loops and thread loops.
-                                </span>
-
+                                1. Node.js Architecture: Node.js is made of Chrome V8 engine which is written in C++ and Libuv which is a multi-platform C library that provides support for asynchronous I/O based events on event loops and thread loops.
                                 <br />
                                 2 Node.js Application: So now that, we have learned about the Node.js architecture, it’s time to learn how a Node.js application runs and this part includes the concept of Node.js being single-threaded and its non-blocking nature as well. So, first of all, what is a thread?
                             </p>
