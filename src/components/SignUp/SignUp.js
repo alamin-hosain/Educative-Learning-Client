@@ -1,25 +1,49 @@
-import React, { useContext } from 'react';
+
+import React, { useContext, useState } from 'react';
+import toast from 'react-hot-toast';
 import { FaGithub } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../contexts/ContextProvider';
 
 const SignUp = () => {
-    const { signUp, verifyEmail } = useContext(AuthContext);
+    const [error, setError] = useState('');
+
+    const { user, signUp, verifyEmail, updateUser } = useContext(AuthContext);
 
     const handleSubmit = (e) => {
         e.preventDefault();
+
         const form = e.target;
         const name = form.name.value;
-        const photoUrl = form.photoUrl.value;
+        const photo_Url = form.photoUrl.value;
         const email = form.email.value;
         const password = form.password.value;
 
+
+        if (!/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,}$/.test(password)) {
+            setError('Please Use Minimum Six characters, at least one letter and one number:')
+            return;
+        }
+
+
         signUp(email, password)
             .then(result => {
-                const user = result.user;
+                console.log(result.user)
+                updateUser(name, photo_Url)
+                    .then(() => { })
+                    .catch(e => setError(e))
+
                 form.reset();
+
+                verifyEmail()
+                    .then(() => {
+                        toast.success('Email Verification Link Has Been Send, Plz Check Your Email and Verify')
+                    })
+                    .catch(e => setError(e))
             })
-            .catch((error) => console.error(error))
+            .catch((error) => setError(error))
+
+
 
     }
 
@@ -38,11 +62,13 @@ const SignUp = () => {
                     </label>
                     <label className="block">
                         <span className="block mb-1 text-xs font-medium text-gray-700">Your Email</span>
-                        <input className="form-input" name='email' type="email" placeholder="Ex. james@bond.com" required />
+                        <input className="form-input" name='email' type="email" placeholder="james@bond.com" required />
+
                     </label>
                     <label className="block">
                         <span className="block mb-1 text-xs font-medium text-gray-700">Your Password</span>
-                        <input className="form-input" name='password' type="password" placeholder="••••••••" required />
+                        <input className="form-input mb-4" name='password' type="password" placeholder="••••••••" required />
+                        <span className='text-red-600'>{error}</span>
                     </label>
                     <input type="submit" className="w-full text-white text-lg cursor-pointer py-3 mt-1 bg-[#6cc17e] hover:bg-[#6dcd82] transition-all" value="Sign Up" />
                 </form>
