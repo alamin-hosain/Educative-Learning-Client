@@ -42,13 +42,13 @@ const Item = ({ title, children }) => {
 
 const Faq = () => {
     return (
-        <div class="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
-            <div class="max-w-xl sm:mx-auto lg:max-w-2xl">
-                <div class="flex flex-col mb-16 sm:text-center">
-                    <a href="/" class="mb-6 sm:mx-auto">
-                        <div class="flex items-center justify-center w-12 h-12 rounded-full bg-indigo-50">
+        <div className="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
+            <div className="max-w-xl sm:mx-auto lg:max-w-2xl">
+                <div className="flex flex-col mb-16 sm:text-center">
+                    <a href="/" className="mb-6 sm:mx-auto">
+                        <div className="flex items-center justify-center w-12 h-12 rounded-full bg-indigo-50">
                             <svg
-                                class="w-10 h-10 text-deep-purple-accent-400"
+                                className="w-10 h-10 text-deep-purple-accent-400"
                                 stroke="currentColor"
                                 viewBox="0 0 52 52"
                             >
@@ -62,13 +62,13 @@ const Faq = () => {
                             </svg>
                         </div>
                     </a>
-                    <div class="max-w-xl md:mx-auto sm:text-center lg:max-w-2xl">
-                        <h2 class="max-w-lg mb-6 font-sans text-3xl font-bold leading-none tracking-tight text-gray-900 sm:text-4xl md:mx-auto">
-                            <span class="relative inline-block">
+                    <div className="max-w-xl md:mx-auto sm:text-center lg:max-w-2xl">
+                        <h2 className="max-w-lg mb-6 font-sans text-3xl font-bold leading-none tracking-tight text-gray-900 sm:text-4xl md:mx-auto">
+                            <span className="relative inline-block">
                                 <svg
                                     viewBox="0 0 52 24"
                                     fill="currentColor"
-                                    class="absolute top-0 left-0 z-0 hidden w-32 -mt-8 -ml-20 text-blue-gray-100 lg:w-32 lg:-ml-28 lg:-mt-10 sm:block"
+                                    className="absolute top-0 left-0 z-0 hidden w-32 -mt-8 -ml-20 text-blue-gray-100 lg:w-32 lg:-ml-28 lg:-mt-10 sm:block"
                                 >
                                     <defs>
                                         <pattern
@@ -87,16 +87,16 @@ const Faq = () => {
                                         height="24"
                                     />
                                 </svg>
-                                <span class="relative">FAQ</span>
+                                <span className="relative">FAQ</span>
                             </span>{' '}
                             Check Out this FAQ questions to Know your desired answer
                         </h2>
-                        <p class="text-base text-gray-700 md:text-lg">
+                        <p className="text-base text-gray-700 md:text-lg">
                             This section for the user who wants to know more about our courses or about our service. Feel free to check you the questions to get your answer.
                         </p>
                     </div>
                 </div>
-                <div class="space-y-4">
+                <div className="space-y-4">
                     <Item title="How do I take a Edumy course?">
                         Udemy courses are entirely on-demand and they can be accessed from several different devices and platforms, including a desktop, laptop, and our mobile app.
 

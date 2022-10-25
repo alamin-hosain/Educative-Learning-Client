@@ -1,30 +1,50 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { FaGithub } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../contexts/ContextProvider';
 
 const SignUp = () => {
+    const { signUp, verifyEmail } = useContext(AuthContext);
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        const form = e.target;
+        const name = form.name.value;
+        const photoUrl = form.photoUrl.value;
+        const email = form.email.value;
+        const password = form.password.value;
+
+        signUp(email, password)
+            .then(result => {
+                const user = result.user;
+                form.reset();
+            })
+            .catch((error) => console.error(error))
+
+    }
+
     return (
         <div className="px-0 py-20 mx-auto max-w-7xl sm:px-4 header">
             <div className="w-full px-4 pt-5 pb-6 mx-auto mt-8 mb-6 bg-white rounded-none shadow-xl sm:rounded-lg sm:w-10/12 md:w-8/12 lg:w-6/12 xl:w-4/12 sm:px-6">
                 <h1 className="mb-4 text-lg font-semibold text-left text-gray-900">Log in to your account</h1>
-                <form className="mb-8 space-y-4">
+                <form className="mb-8 space-y-4" onSubmit={handleSubmit}>
                     <label className="block">
                         <span className="block mb-1 text-xs font-medium text-gray-700">Your Full Name</span>
-                        <input className="form-input" type="text" placeholder="Enter Your Full Name" />
+                        <input className="form-input" name='name' type="text" placeholder="Enter Your Full Name" />
                     </label>
                     <label className="block">
                         <span className="block mb-1 text-xs font-medium text-gray-700">Your Photo URL</span>
-                        <input className="form-input" type="text" placeholder="Enter Photo URL" />
+                        <input className="form-input" name='photoUrl' type="text" placeholder="Enter Photo URL" />
                     </label>
                     <label className="block">
                         <span className="block mb-1 text-xs font-medium text-gray-700">Your Email</span>
-                        <input className="form-input" type="email" placeholder="Ex. james@bond.com" required />
+                        <input className="form-input" name='email' type="email" placeholder="Ex. james@bond.com" required />
                     </label>
                     <label className="block">
                         <span className="block mb-1 text-xs font-medium text-gray-700">Your Password</span>
-                        <input className="form-input" type="password" placeholder="••••••••" required />
+                        <input className="form-input" name='password' type="password" placeholder="••••••••" required />
                     </label>
-                    <input type="submit" className="w-full text-white text-lg cursor-pointer py-3 mt-1 bg-[#6cc17e] hover:bg-[#6dcd82] transition-all" value="Login Now" />
+                    <input type="submit" className="w-full text-white text-lg cursor-pointer py-3 mt-1 bg-[#6cc17e] hover:bg-[#6dcd82] transition-all" value="Sign Up" />
                 </form>
                 <div className="space-y-8">
                     <div className="text-center border-b border-gray-200">
