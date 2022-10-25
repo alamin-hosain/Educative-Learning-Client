@@ -2,7 +2,7 @@ import { toHaveDescription } from '@testing-library/jest-dom/dist/matchers';
 import React from 'react';
 
 const SingleCourse = ({ course }) => {
-    console.log(course);
+
     const { category, name, id, short_description, image, price, rating, reviews } = course;
 
     return (
