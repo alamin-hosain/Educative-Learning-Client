@@ -6,7 +6,7 @@ import { AuthContext } from '../../contexts/ContextProvider';
 import toast from 'react-hot-toast';
 
 const Navbar = () => {
-    const { user, logOut } = useContext(AuthContext);
+    const { user, logOut, darkMode, setDarkMode } = useContext(AuthContext);
 
     const handleLogOut = () => {
         logOut()
@@ -71,15 +71,16 @@ const Navbar = () => {
                                 Blog
                             </Link>
                         </li>
-                        <li>
-                            <Link
-                                to="/"
-                                aria-label="About us"
-                                title="About us"
-                                className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
-                            >
-                                Toggle
-                            </Link>
+                        <li className='flex'>
+                            <label for="Toggle2" className="inline-flex items-center space-x-4 cursor-pointer dark:text-gray-100">
+
+                                <span className="relative">
+                                    <input id="Toggle2" type="checkbox" className="hidden peer" />
+                                    <div className="w-10 h-4 rounded-full shadow dark:bg-gray-600 peer-checked:dark:bg-[#098b99]"></div>
+                                    <div className="absolute left-0 w-6 h-6 rounded-full shadow -inset-y-1 peer-checked:right-0 peer-checked:left-auto dark:bg-[#098b99]"></div>
+                                </span>
+
+                            </label>
                         </li>
                     </ul>
                 </div>
@@ -214,15 +215,16 @@ const Navbar = () => {
                                                 Blog
                                             </Link>
                                         </li>
-                                        <li>
-                                            <Link
-                                                to="/"
-                                                aria-label="About us"
-                                                title="About us"
-                                                className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
-                                            >
-                                                Toggle theme
-                                            </Link>
+                                        <li className='flex'>
+                                            <label for="Toggle2" className="inline-flex items-center space-x-4 cursor-pointer dark:text-gray-100">
+
+                                                <span className="relative">
+                                                    <input id="Toggle2" type="checkbox" className="hidden peer" />
+                                                    <div className="w-10 h-4 rounded-full shadow dark:bg-gray-600 peer-checked:dark:bg-[#098b99]"></div>
+                                                    <div className="absolute left-0 w-6 h-6 rounded-full shadow -inset-y-1 peer-checked:right-0 peer-checked:left-auto dark:bg-[#098b99]"></div>
+                                                </span>
+
+                                            </label>
                                         </li>
 
                                         {user?.uid ? <>

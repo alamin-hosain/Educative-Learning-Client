@@ -17,7 +17,7 @@ const routes = createBrowserRouter([
         path: '/', element: <Main />, errorElement: <ErrorPage />, children: [
             {
                 path: '/', element: <Home />,
-                loader: () => fetch('http://localhost:5000/category/computer-science')
+                loader: () => fetch('http://localhost:5000/category/02')
             },
             { path: '/login', element: <Login /> },
             { path: '/signup', element: <SignUp /> },

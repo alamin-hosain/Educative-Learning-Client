@@ -1,13 +1,16 @@
 import React, { createContext, useEffect, useState } from 'react';
 import { createUserWithEmailAndPassword, getAuth, GithubAuthProvider, GoogleAuthProvider, onAuthStateChanged, sendEmailVerification, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from 'firebase/auth'
 import app from '../firebase/firebase.config';
-const auth = getAuth(app);
 
+
+const auth = getAuth(app);
 export const AuthContext = createContext();
 
 const ContextProvider = ({ children }) => {
     const googleProvider = new GoogleAuthProvider();
     const githubProvider = new GithubAuthProvider();
+
+    const [darkMode, setDarkMode] = useState(false);
 
     const [user, setUser] = useState();
     const [loading, setLoading] = useState(true);
@@ -65,12 +68,14 @@ const ContextProvider = ({ children }) => {
         return signOut(auth)
     }
 
-    const authInfo = { user, signUp, verifyEmail, updateUser, signIn, signUpUsingGamil, signUpUsingGithub, logOut, loading, setLoading }
+    const authInfo = { user, signUp, verifyEmail, updateUser, signIn, signUpUsingGamil, signUpUsingGithub, logOut, loading, setLoading, darkMode, setDarkMode }
 
     return (
-        <AuthContext.Provider value={authInfo}>
-            {children}
-        </AuthContext.Provider>
+        <div >
+            <AuthContext.Provider value={authInfo}>
+                {children}
+            </AuthContext.Provider>
+        </div>
     );
 };
 
