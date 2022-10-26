@@ -1,7 +1,7 @@
 import React, { useRef } from 'react';
 import { useLoaderData } from 'react-router-dom';
 import { useReactToPrint } from 'react-to-print';
-
+import './CourseDetails.css';
 
 const CourseDetails = () => {
     const coursesDetails = useLoaderData();
@@ -17,6 +17,11 @@ const CourseDetails = () => {
 
     return (
         <>
+            <div className='header-area flex items-center justify-center text-white flex-col space-y-4'>
+                <p>{category}</p>
+                <h3 className='text-4xl font-bold' >{name}</h3>
+
+            </div>
             <button onClick={exportPDF} className='mt-10 bg-yellow-500 text-lg font-bold py-4 px-10 cursor-pointer hover:bg-yellow-200 mx-auto block'>Download Course Details In PDF </button>
 
             <div className="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20" ref={inputRef} id="divToPrint">
