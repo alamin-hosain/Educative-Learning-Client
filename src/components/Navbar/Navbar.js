@@ -86,7 +86,7 @@ const Navbar = () => {
                 <ul className="flex items-center hidden space-x-8 lg:flex photoURL">
                     {
                         user && user.uid ? <>
-                            <li onClick={handleLogOut} className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400 cursor-pointer">LogOut</li>
+                            <li onClick={handleLogOut} className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400 cursor-pointer">Log Out</li>
 
                             <li className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400 cursor-pointer">{user.displayName}</li>
                             <img className='w-1/12 rounded-full cursor-pointer' src={user.photoURL} alt="" />
@@ -229,7 +229,7 @@ const Navbar = () => {
 
                                             <img className='w-1/12 rounded-full cursor-pointer' src={user.photoURL} alt="" />
                                             <li className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400 cursor-pointer">{user.displayName}</li>
-                                            <li onClick={handleLogOut} className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400 cursor-pointer">LogOut</li>
+                                            <li onClick={handleLogOut} className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400 cursor-pointer">Log Out</li>
 
                                         </> :
 
