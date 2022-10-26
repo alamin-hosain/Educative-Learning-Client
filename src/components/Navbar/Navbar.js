@@ -7,12 +7,21 @@ import toast from 'react-hot-toast';
 
 const Navbar = () => {
     const { user, logOut } = useContext(AuthContext);
+
+    const [toggle, setToggle] = useState(false)
     const handleLogOut = () => {
         logOut()
             .then(() => { toast.success(' Log Out Success') })
             .catch(e => console.error(e))
     }
 
+    const handleMouseOver = (e) => {
+        setToggle(!toggle);
+    }
+
+    const handleMouseLeave = () => {
+        setToggle(false)
+    }
 
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     return (
@@ -90,8 +99,8 @@ const Navbar = () => {
                         user && user.uid ? <>
                             <li onClick={handleLogOut} className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400 cursor-pointer">Log Out</li>
 
-                            <li className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400 cursor-pointer">{user.displayName}</li>
-                            <img className='w-1/12 rounded-full cursor-pointer' src={user.photoURL} alt="" />
+                            {toggle ? <li className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400 cursor-pointer">{user.displayName}</li> : ''}
+                            <img onMouseEnter={handleMouseOver} onMouseLeave={handleMouseLeave} className='w-1/12 rounded-full cursor-pointer' src={user.photoURL} alt="" />
 
                         </> :
 
@@ -231,8 +240,8 @@ const Navbar = () => {
 
                                         {user?.uid ? <>
 
-                                            <img className='w-1/12 rounded-full cursor-pointer' src={user.photoURL} alt="" />
-                                            <li className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400 cursor-pointer">{user.displayName}</li>
+                                            <img onMouseEnter={handleMouseOver} onMouseLeave={handleMouseLeave} className='w-1/12 rounded-full cursor-pointer' src={user.photoURL} alt="" />
+                                            {toggle ? <li className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400 cursor-pointer">{user.displayName}</li> : ''}
                                             <li onClick={handleLogOut} className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400 cursor-pointer">Log Out</li>
 
                                         </> :
