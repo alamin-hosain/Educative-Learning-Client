@@ -47,17 +47,18 @@ const Blog = () => {
                             <h6 className="mb-4 text-2xl  font-semibold leading-8">
                                 Why are you using firebase? What other options do you have to implement authentication?
                             </h6>
-                            <p className="text-sm text-gray-900">
+                            <p className="text-sm text-gray-900 mb-3">
                                 We are using firebase to Authentication to allow users to sign in to out app using one or more sign-in methods, including email address and password, also social signing and sign up options available.
                                 Other Options are :
-                                <ul>
-                                    <li>MongoDB</li>
-                                    <li>Oracle Database.</li>
-                                    <li>Amazon Redshift</li>
-                                    <li>DataStax Enterprise.</li>
-                                    <li>Redis Enterprise Cloud.</li>
-                                </ul>
+
                             </p>
+                            <ul className='space-y-2'>
+                                <li>MongoDB</li>
+                                <li>Oracle Database.</li>
+                                <li>Amazon Redshift</li>
+                                <li>DataStax Enterprise.</li>
+                                <li>Redis Enterprise Cloud.</li>
+                            </ul>
                         </div>
                         <div className="flex items-center justify-center">
                             <svg
@@ -113,15 +114,18 @@ const Blog = () => {
                     <div className="absolute top-0 left-0 w-full h-1 duration-300 origin-right transform scale-x-0 bg-deep-purple-accent-400 group-hover:scale-x-100" />
                     <div className="absolute bottom-0 right-0 w-1 h-full duration-300 origin-top transform scale-y-0 bg-deep-purple-accent-400 group-hover:scale-y-100" />
                     <div className="relative flex items-center justify-between p-5 bg-white rounded-sm">
-                        <div className="pr-4">
+                        <div className="pr-4 space-y-3">
                             <h6 className="mb-4 text-2xl  font-semibold leading-8">
                                 What is Node? How does Node work?
                             </h6>
                             <p className="text-sm text-gray-900">
                                 The Node.js run-time environment includes everything you need to execute a program written in JavaScrip. Node.js came into existence when the original developers of JavaScript extended it from something you could only run in the browser to something you could run on your machine as a standalone application.
-                                <br />
+
+                            </p>
+                            <p>
                                 1. Node.js Architecture: Node.js is made of Chrome V8 engine which is written in C++ and Libuv which is a multi-platform C library that provides support for asynchronous I/O based events on event loops and thread loops.
-                                <br />
+                            </p>
+                            <p>
                                 2 Node.js Application: So now that, we have learned about the Node.js architecture, it’s time to learn how a Node.js application runs and this part includes the concept of Node.js being single-threaded and its non-blocking nature as well. So, first of all, what is a thread?
                             </p>
                         </div>

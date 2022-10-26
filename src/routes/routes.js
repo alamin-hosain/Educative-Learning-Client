@@ -7,6 +7,7 @@ import Home from "../components/Home/Home";
 import Login from "../components/Login/Login";
 import SignUp from "../components/SignUp/SignUp";
 import Main from "../layout/Main";
+import PrivateRoute from "./PrivateRoute";
 
 
 
@@ -19,7 +20,11 @@ const routes = createBrowserRouter([
             },
             { path: '/login', element: <Login /> },
             { path: '/signup', element: <SignUp /> },
-            { path: '/courses', element: <Courses /> },
+            {
+                path: '/courses', element: <PrivateRoute>
+                    <Courses />
+                </PrivateRoute>
+            },
             { path: '/faq', element: <Faq /> },
             { path: '/blog', element: <Blog /> },
         ]

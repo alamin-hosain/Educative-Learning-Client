@@ -8,7 +8,7 @@ import { AuthContext } from '../../contexts/ContextProvider';
 const SignUp = () => {
     const [error, setError] = useState('');
 
-    const { user, signUp, verifyEmail, updateUser } = useContext(AuthContext);
+    const { user, signUp, verifyEmail, updateUser, signUpUsingGamil, signUpUsingGithub } = useContext(AuthContext);
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -20,8 +20,8 @@ const SignUp = () => {
         const password = form.password.value;
 
 
-        if (!/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,}$/.test(password)) {
-            setError('Please Use Minimum Six characters, at least one letter and one number:')
+        if (!/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.{6,})/.test(password)) {
+            setError('Please Use Minimum Six characters, at least one lowercase, one uppercase, and One number')
             return;
         }
 
@@ -31,7 +31,7 @@ const SignUp = () => {
                 console.log(result.user)
                 updateUser(name, photo_Url)
                     .then(() => { })
-                    .catch(e => setError(e))
+                    .catch(e => console.error(e))
 
                 form.reset();
 
@@ -39,13 +39,33 @@ const SignUp = () => {
                     .then(() => {
                         toast.success('Email Verification Link Has Been Send, Plz Check Your Email and Verify')
                     })
-                    .catch(e => setError(e))
+                    .catch(e => console.error(e))
             })
-            .catch((error) => setError(error))
+            .catch((error) => console.error(error))
 
-
+        setError('');
 
     }
+
+    const singUPGmail = () => {
+        signUpUsingGamil()
+            .then(result => {
+                const user = result.user;
+                console.log(user);
+                toast.success('Sign Up Using Gmail Success')
+            })
+            .catch(e => console.error(e))
+    }
+
+    const signUpGithub = () => {
+        signUpUsingGithub()
+            .then(result => {
+                const user = result.user;
+                toast.success('Sign Up Using Github Success')
+            })
+            .catch(e => console.error(e))
+    }
+
 
     return (
         <div className="px-0 py-20 mx-auto max-w-7xl sm:px-4 header">
@@ -77,7 +97,7 @@ const SignUp = () => {
                         <span className="p-2 text-xs font-semibold tracking-wide text-gray-600 uppercase bg-white">Or</span>
                     </div>
                     <div className="grid grid-cols-2 gap-4">
-                        <Link href="#" className="py-3 btn btn-icon btn-google flex ">
+                        <div className="py-3 btn btn-icon btn-google flex " onClick={singUPGmail}>
                             <div className='flex'>
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" className="mr-1">
                                     <path
@@ -86,13 +106,13 @@ const SignUp = () => {
                                 </svg>
                                 <span className="sr-only">Continue with</span> Google
                             </div>
-                        </Link>
-                        <Link href="#" className="py-3 btn btn-icon btn-dark">
+                        </div>
+                        <div className="py-3 btn btn-icon btn-dark" onSubmit={signUpGithub}>
                             <div className='flex'>
                                 <span className='text-white mr-2'><FaGithub /></span>
                                 <span className="sr-only">Continue with</span> Github
                             </div>
-                        </Link>
+                        </div>
                     </div>
                 </div>
             </div>
