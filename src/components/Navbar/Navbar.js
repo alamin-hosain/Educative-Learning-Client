@@ -1,9 +1,19 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import './Navbar.css';
 import logo from '../../assets/logo.png'
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../contexts/ContextProvider';
+import toast from 'react-hot-toast';
 
 const Navbar = () => {
+    const { user, logOut } = useContext(AuthContext);
+
+    const handleLogOut = () => {
+        logOut()
+            .then(() => { toast.success(' Log Out Success') })
+            .catch(e => console.error(e))
+    }
+
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     return (
         <div className="px-4 py-5 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
@@ -73,27 +83,39 @@ const Navbar = () => {
                         </li>
                     </ul>
                 </div>
-                <ul className="flex items-center hidden space-x-8 lg:flex">
-                    <li>
-                        <Link
-                            to="/login"
-                            aria-label="Sign in"
-                            title="Sign in"
-                            className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
-                        >
-                            Sign in
-                        </Link>
-                    </li>
-                    <li>
-                        <Link
-                            to="/signup"
-                            className="inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide bg-[#098b99] text-white transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none hover:bg-[#00515a] hover:text-white"
-                            aria-label="Sign up"
-                            title="Sign up"
-                        >
-                            Sign up
-                        </Link>
-                    </li>
+                <ul className="flex items-center hidden space-x-8 lg:flex photoURL">
+                    {
+                        user && user.uid ? <>
+                            <li onClick={handleLogOut} className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400 cursor-pointer">LogOut</li>
+
+                            <li className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400 cursor-pointer">{user.displayName}</li>
+                            <img className='w-1/12 rounded-full cursor-pointer' src={user.photoURL} alt="" />
+
+                        </> :
+
+                            <>
+                                <li>
+                                    <Link
+                                        to="/login"
+                                        aria-label="Sign in"
+                                        title="Sign in"
+                                        className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
+                                    >
+                                        Sign in
+                                    </Link>
+                                </li>
+                                <li>
+                                    <Link
+                                        to="/signup"
+                                        className="inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide bg-[#098b99] text-white transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none hover:bg-[#00515a] hover:text-white"
+                                        aria-label="Sign up"
+                                        title="Sign up"
+                                    >
+                                        Sign up
+                                    </Link>
+                                </li>
+                            </>
+                    }
                 </ul>
                 <div className="lg:hidden">
                     <button
@@ -202,26 +224,38 @@ const Navbar = () => {
                                                 Toggle theme
                                             </Link>
                                         </li>
-                                        <li>
-                                            <Link
-                                                to="/login"
-                                                aria-label="Sign in"
-                                                title="Sign in"
-                                                className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
-                                            >
-                                                Sign in
-                                            </Link>
-                                        </li>
-                                        <li>
-                                            <Link
-                                                to="/signup"
-                                                className="inline-flex items-center justify-center w-full h-12 px-6 font-medium tracking-wide text-white bg-[#098b99] transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-white hover:text-white  focus:shadow-outline focus:outline-none hover:bg-[#01535d] "
-                                                aria-label="Sign up"
-                                                title="Sign up"
-                                            >
-                                                Sign up
-                                            </Link>
-                                        </li>
+
+                                        {user?.uid ? <>
+
+                                            <img className='w-1/12 rounded-full cursor-pointer' src={user.photoURL} alt="" />
+                                            <li className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400 cursor-pointer">{user.displayName}</li>
+                                            <li onClick={handleLogOut} className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400 cursor-pointer">LogOut</li>
+
+                                        </> :
+
+                                            <>
+                                                <li>
+                                                    <Link
+                                                        to="/login"
+                                                        aria-label="Sign in"
+                                                        title="Sign in"
+                                                        className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
+                                                    >
+                                                        Sign in
+                                                    </Link>
+                                                </li>
+                                                <li>
+                                                    <Link
+                                                        to="/signup"
+                                                        className="inline-flex items-center justify-center w-full h-12 px-6 font-medium tracking-wide text-white bg-[#098b99] transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-white hover:text-white  focus:shadow-outline focus:outline-none hover:bg-[#01535d] "
+                                                        aria-label="Sign up"
+                                                        title="Sign up"
+                                                    >
+                                                        Sign up
+                                                    </Link>
+                                                </li>
+                                            </>
+                                        }
                                     </ul>
                                 </nav>
                             </div>
