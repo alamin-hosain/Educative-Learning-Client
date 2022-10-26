@@ -2,7 +2,7 @@
 import React, { useContext, useState } from 'react';
 import toast from 'react-hot-toast';
 import { FaGithub } from 'react-icons/fa';
-import { Link, Navigate, useLocation, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../contexts/ContextProvider';
 
 const SignUp = () => {

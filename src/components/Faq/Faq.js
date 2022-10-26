@@ -87,9 +87,8 @@ const Faq = () => {
                                         height="24"
                                     />
                                 </svg>
-                                <span className="relative">FAQ</span>
-                            </span>{' '}
-                            Check Out this FAQ questions to Know your desired answer
+                            </span>
+                            FAQ Check Out this FAQ questions to Know your desired answer
                         </h2>
                         <p className="text-base text-gray-700 md:text-lg">
                             This section for the user who wants to know more about our courses or about our service. Feel free to check you the questions to get your answer.

@@ -1,9 +1,10 @@
-import { toHaveDescription } from '@testing-library/jest-dom/dist/matchers';
+
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const SingleCourse = ({ course }) => {
 
-    const { category, name, id, short_description, image, price, rating, reviews } = course;
+    const { name, image, reviews } = course;
 
     return (
         <div className='border p-2'>
@@ -18,7 +19,7 @@ const SingleCourse = ({ course }) => {
                 <p className="text-lg font-bold">{name}</p>
                 <p className="mb-5 text-xs text-gray-800">{reviews}</p>
                 <div className="flex items-center justify-center">
-                    <a href="" className=' py-2 px-4 text-white bg-[#098b99] rounded-lg hover:bg-[#f0bf79] hover:text-black'>Enroll Now</a>
+                    <Link to="" className=' py-2 px-4 text-white bg-[#098b99] rounded-lg hover:bg-[#f0bf79] hover:text-black'>Enroll Now</Link>
                 </div>
             </div>
         </div>

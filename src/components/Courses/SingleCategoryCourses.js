@@ -3,7 +3,7 @@ import { FaStar, FaStarHalfAlt } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 
 const SingleCategoryCourses = ({ course }) => {
-    const { name, short_description, image, price, rating, reviews, id } = course;
+    const { name, short_description, image, price, rating, id } = course;
     return (
         <div className="overflow-hidden transition-shadow duration-300 bg-white rounded">
             <Link to={`/course-details/${id}`} aria-label="Article">

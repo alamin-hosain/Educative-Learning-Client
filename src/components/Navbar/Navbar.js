@@ -1,18 +1,18 @@
 import React, { useContext, useState } from 'react';
 import './Navbar.css';
 import logo from '../../assets/logo.png'
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import { AuthContext } from '../../contexts/ContextProvider';
 import toast from 'react-hot-toast';
 
 const Navbar = () => {
-    const { user, logOut, darkMode, setDarkMode } = useContext(AuthContext);
-
+    const { user, logOut } = useContext(AuthContext);
     const handleLogOut = () => {
         logOut()
             .then(() => { toast.success(' Log Out Success') })
             .catch(e => console.error(e))
     }
+
 
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     return (
@@ -32,47 +32,48 @@ const Navbar = () => {
                     </Link>
                     <ul className="flex items-center hidden space-x-8 lg:flex">
                         <li>
-                            <Link
-                                to="/"
+                            <NavLink
+                                to="/home"
                                 aria-label="Our product"
                                 title="Our product"
                                 className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
+
                             >
                                 Home
-                            </Link>
+                            </NavLink>
                         </li>
                         <li>
-                            <Link
+                            <NavLink
                                 to="/courses"
                                 aria-label="Our product"
                                 title="Our product"
                                 className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
                             >
                                 Courses
-                            </Link>
+                            </NavLink>
                         </li>
                         <li>
-                            <Link
+                            <NavLink
                                 to="/faq"
                                 aria-label="Our product"
                                 title="Our product"
                                 className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
                             >
                                 FAQ
-                            </Link>
+                            </NavLink>
                         </li>
                         <li>
-                            <Link
+                            <NavLink
                                 to="/blog"
                                 aria-label="Product pricing"
                                 title="Product pricing"
                                 className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
                             >
                                 Blog
-                            </Link>
+                            </NavLink>
                         </li>
                         <li className='flex'>
-                            <label for="Toggle2" className="inline-flex items-center space-x-4 cursor-pointer dark:text-gray-100">
+                            <label htmlFor="Toggle2" className="inline-flex items-center space-x-4 cursor-pointer dark:text-gray-100">
 
                                 <span className="relative">
                                     <input id="Toggle2" type="checkbox" className="hidden peer" />
@@ -96,24 +97,24 @@ const Navbar = () => {
 
                             <>
                                 <li>
-                                    <Link
+                                    <NavLink
                                         to="/login"
                                         aria-label="Sign in"
                                         title="Sign in"
                                         className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
                                     >
                                         Sign in
-                                    </Link>
+                                    </NavLink>
                                 </li>
                                 <li>
-                                    <Link
+                                    <NavLink
                                         to="/signup"
                                         className="inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide bg-[#098b99] text-white transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none hover:bg-[#00515a] hover:text-white"
                                         aria-label="Sign up"
                                         title="Sign up"
                                     >
                                         Sign up
-                                    </Link>
+                                    </NavLink>
                                 </li>
                             </>
                     }
@@ -140,12 +141,13 @@ const Navbar = () => {
                             />
                         </svg>
                     </button>
+
                     {isMenuOpen && (
-                        <div className="absolute top-0 left-0 w-full">
+                        <div className="absolute top-0 left-0 w-full z-50">
                             <div className="p-5 bg-white border rounded shadow-sm">
                                 <div className="flex items-center justify-between mb-4">
                                     <div>
-                                        <Link
+                                        <NavLink
                                             to="/"
                                             aria-label="Company"
                                             title="Company"
@@ -155,7 +157,7 @@ const Navbar = () => {
                                             <span className="ml-2 text-xl font-bold tracking-wide text-gray-800 uppercase">
                                                 Edumy
                                             </span>
-                                        </Link>
+                                        </NavLink>
                                     </div>
                                     <div>
                                         <button
@@ -176,47 +178,47 @@ const Navbar = () => {
                                 <nav>
                                     <ul className="space-y-4">
                                         <li>
-                                            <Link
-                                                to="/"
+                                            <NavLink
+                                                to="/home"
                                                 aria-label="Our product"
                                                 title="Our product"
                                                 className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
                                             >
                                                 Home
-                                            </Link>
+                                            </NavLink>
                                         </li>
                                         <li>
-                                            <Link
+                                            <NavLink
                                                 to="/courses"
                                                 aria-label="Our product"
                                                 title="Our product"
                                                 className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
                                             >
                                                 Courses
-                                            </Link>
+                                            </NavLink>
                                         </li>
                                         <li>
-                                            <Link
+                                            <NavLink
                                                 to="/faq"
                                                 aria-label="Our product"
                                                 title="Our product"
                                                 className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
                                             >
                                                 FAQ
-                                            </Link>
+                                            </NavLink>
                                         </li>
                                         <li>
-                                            <Link
+                                            <NavLink
                                                 to="/blog"
                                                 aria-label="Product pricing"
                                                 title="Product pricing"
                                                 className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
                                             >
                                                 Blog
-                                            </Link>
+                                            </NavLink>
                                         </li>
                                         <li className='flex'>
-                                            <label for="Toggle2" className="inline-flex items-center space-x-4 cursor-pointer dark:text-gray-100">
+                                            <label htmlFor="Toggle2" className="inline-flex items-center space-x-4 cursor-pointer dark:text-gray-100">
 
                                                 <span className="relative">
                                                     <input id="Toggle2" type="checkbox" className="hidden peer" />
@@ -237,24 +239,24 @@ const Navbar = () => {
 
                                             <>
                                                 <li>
-                                                    <Link
+                                                    <NavLink
                                                         to="/login"
                                                         aria-label="Sign in"
                                                         title="Sign in"
                                                         className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
                                                     >
                                                         Sign in
-                                                    </Link>
+                                                    </NavLink>
                                                 </li>
                                                 <li>
-                                                    <Link
+                                                    <NavLink
                                                         to="/signup"
                                                         className="inline-flex items-center justify-center w-full h-12 px-6 font-medium tracking-wide text-white bg-[#098b99] transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-white hover:text-white  focus:shadow-outline focus:outline-none hover:bg-[#01535d] "
                                                         aria-label="Sign up"
                                                         title="Sign up"
                                                     >
                                                         Sign up
-                                                    </Link>
+                                                    </NavLink>
                                                 </li>
                                             </>
                                         }

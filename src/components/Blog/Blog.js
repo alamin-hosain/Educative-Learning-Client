@@ -2,6 +2,7 @@ import React from 'react';
 
 const Blog = () => {
     return (
+
         <div className="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
             <div className="grid max-w-screen-lg gap-8 row-gap-6 sm:mx-auto lg:grid-cols-2">
                 <div
@@ -33,6 +34,7 @@ const Blog = () => {
                         </div>
                     </div>
                 </div>
+
                 <div
                     aria-label="View item"
                     title="View item"
@@ -72,7 +74,6 @@ const Blog = () => {
                     </div>
                 </div>
 
-
                 <div
                     aria-label="View item"
                     title="View item"
@@ -102,7 +103,6 @@ const Blog = () => {
                         </div>
                     </div>
                 </div>
-
 
                 <div
                     aria-label="View item"
@@ -142,6 +142,7 @@ const Blog = () => {
                 </div>
             </div>
         </div>
+
     );
 };
 

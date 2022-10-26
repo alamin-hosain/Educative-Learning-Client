@@ -1,8 +1,7 @@
-import React, { useEffect } from 'react';
 import { useLoaderData } from 'react-router-dom';
 import header from '../../assets/header.png';
 import SingleCourse from '../../SingleCourse/SingleCourse';
-import Footer from '../Footer/Footer';
+
 import './Home.css';
 
 const Home = () => {

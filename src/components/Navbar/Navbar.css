@@ -10,3 +10,7 @@ a:hover {
     width: 35px;
     height: 35px;
 }
+
+.active {
+    color: #098b99;
+}
