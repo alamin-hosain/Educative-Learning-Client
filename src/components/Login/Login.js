@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { FaGithub } from "react-icons/fa";
 import { AuthContext } from '../../contexts/ContextProvider';
@@ -6,7 +6,7 @@ import toast from 'react-hot-toast';
 
 const Login = () => {
     const { user, signIn, signUpUsingGamil, signUpUsingGithub } = useContext(AuthContext);
-
+    const [error, setError] = useState('');
     const navigate = useNavigate();
     const location = useLocation();
     const from = location.state?.from?.pathname || '/';
@@ -21,10 +21,10 @@ const Login = () => {
                 form.reset();
                 navigate(from, { replace: true });
             })
-            .catch(e => console.error(e))
-
-
+            .catch(e => setError(e))
     }
+
+
 
     const signInGmail = () => {
         signUpUsingGamil()
@@ -34,7 +34,7 @@ const Login = () => {
                 toast.success('Sign Up Using Gmail Success')
                 navigate(from, { replace: true });
             })
-            .catch(e => console.error(e))
+            .catch(e => setError(e))
     }
 
     const signInGithub = () => {
@@ -45,7 +45,7 @@ const Login = () => {
                 toast.success('Sign Up Using Github Success')
                 navigate(from, { replace: true });
             })
-            .catch(e => console.error(e))
+            .catch(e => setError(e))
     }
 
 
@@ -65,7 +65,9 @@ const Login = () => {
                                 <span className="block mb-1 text-xs font-medium text-gray-700">Your Password</span>
                                 <input className="form-input" name='password' type="password" placeholder="••••••••" required />
                             </label>
+                            <div className='text-red-600 mb-0'>{error.message}</div>
                             <input type="submit" className="w-full text-white text-lg cursor-pointer py-3 mt-1 bg-[#6cc17e] hover:bg-[#6dcd82] transition-all" value="Login Now" />
+
                         </form>
                         <div className="space-y-8">
                             <div className="text-center border-b border-gray-200">
