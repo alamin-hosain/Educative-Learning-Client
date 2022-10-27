@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 const SingleCourse = ({ course }) => {
 
-    const { name, image, reviews } = course;
+    const { name, image, reviews, id } = course;
 
     return (
         <div className='border p-2 relative'>
@@ -20,11 +20,11 @@ const SingleCourse = ({ course }) => {
                 <p className="mb-10 text-md mt-2 text-gray-800">{reviews}</p>
                 <div className="flex  justify-center mt-6 w-full">
                     <div className='absolute bottom-0'>
-                        <Link to="" className=' py-2 px-4 text-white bg-[#098b99] rounded-lg hover:bg-[#f0bf79] hover:text-black w-full block'>Enroll Now</Link>
+                        <Link to={`/course-details/${id}`} className=' py-2 px-4 text-white bg-[#098b99] rounded-lg hover:bg-[#f0bf79] hover:text-black w-full block'>Enroll Now</Link>
                     </div>
                 </div>
             </div>
-        </div>
+        </div >
     );
 };
 

@@ -79,7 +79,7 @@ const SignUp = () => {
     return (
         <div className="px-0 py-20 mx-auto max-w-7xl sm:px-4 header">
             {
-                user?.uid ? <div className='text-4xl text-center'>You Are Already Signed Up</div> :
+                user?.uid ? <div className='text-4xl text-center text-white font-bold'>Signed Up. Verify Your Email </div> :
 
                     <>
                         <div className="w-full px-4 pt-5 pb-6 mx-auto mt-8 mb-6 bg-white rounded-none shadow-xl sm:rounded-lg sm:w-10/12 md:w-8/12 lg:w-6/12 xl:w-4/12 sm:px-6">

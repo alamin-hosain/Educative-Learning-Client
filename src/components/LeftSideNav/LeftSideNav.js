@@ -11,7 +11,7 @@ const LeftSideNav = () => {
     }, [])
 
     return (
-        <div className='lefside mt-24'>
+        <div className='lefside mt-8 lg:mt-24 md:mt-16'>
             <h3 className='text-3xl mb-4'>Subjects</h3>
             <div className='lg:space-y-3 under-order-list text-xl'>
                 {categories.map((category) => <p key={category.id}><Link to={`/category/${category.id}`}>{category.name}</Link></p>)}
