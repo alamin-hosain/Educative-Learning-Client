@@ -10,7 +10,7 @@
 
 ## Live Link :
 
-Check Out Live Link Here: [Edumy](https://reactjs.org/).
+Check Out Live Link Here: [Edumy](https://learning-platform-assign-ea618.web.app/).
 
 ## Authentication
 
