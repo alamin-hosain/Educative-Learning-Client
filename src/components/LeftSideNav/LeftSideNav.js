@@ -10,6 +10,7 @@ const LeftSideNav = () => {
             .then(data => setCategories(data))
     }, [])
 
+
     return (
         <div className='lefside mt-8 lg:mt-24 md:mt-16'>
             <h3 className='text-3xl mb-4'>Subjects</h3>

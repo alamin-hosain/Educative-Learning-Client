@@ -38,18 +38,18 @@ const routes = createBrowserRouter([
             {
                 path: '/category/:id', element:
                     <Category />,
-                loader: ({ params }) => fetch(`https://b610-learning-platform-server-side-delta.vercel.app/${params.id}`)
+                loader: ({ params }) => fetch(`https://b610-learning-platform-server-side-delta.vercel.app/category/${params.id}`)
             },
             {
                 path: '/course-details/:id', element:
                     <CourseDetails></CourseDetails>,
-                loader: ({ params }) => fetch(`https://b610-learning-platform-server-side-delta.vercel.app/${params.id}`)
+                loader: ({ params }) => fetch(`https://b610-learning-platform-server-side-delta.vercel.app/courses/${params.id}`)
             },
             {
                 path: '/checkout/:id', element: <PrivateRoute>
                     <CheckOut />
                 </PrivateRoute>,
-                loader: ({ params }) => fetch(`https://b610-learning-platform-server-side-delta.vercel.app/${params.id}`)
+                loader: ({ params }) => fetch(`https://b610-learning-platform-server-side-delta.vercel.app/courses/${params.id}`)
             },
             {
                 path: '/password-reset', element: <PasswordReset />
