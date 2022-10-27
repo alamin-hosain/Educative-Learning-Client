@@ -1,4 +1,4 @@
-import { useLoaderData } from 'react-router-dom';
+import { Link, useLoaderData } from 'react-router-dom';
 import header from '../../assets/header.png';
 import SingleCourse from '../../SingleCourse/SingleCourse';
 
@@ -28,9 +28,9 @@ const Home = () => {
                         </div>
                         <hr className="mb-6 border-gray-300" />
                         <div className="flex justify-between items-center ">
-                            <a href="/" className="mr-3 text-lg lg:text-2xl bg-[#f0bf79] py-3 px-4 rounded-sm hover:text-white hover:bg-[#6cc17e]">
+                            <Link to="/courses" className="mr-3 text-lg lg:text-2xl bg-[#f0bf79] py-3 px-4 rounded-sm hover:text-white hover:bg-[#6cc17e]">
                                 View Courses
-                            </a>
+                            </Link>
                             <div className="flex text-lg">
                                 <p className='text-white font-bold'>500K+ People already trusted us.</p>
                             </div>

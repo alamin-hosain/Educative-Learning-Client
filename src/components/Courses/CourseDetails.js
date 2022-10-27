@@ -1,19 +1,9 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useRef } from 'react';
 import { Link, useLoaderData } from 'react-router-dom';
 import { useReactToPrint } from 'react-to-print';
 import './CourseDetails.css';
 
 const CourseDetails = () => {
-
-    useEffect(() => {
-        fetch('https://b610-learning-platform-server-side-delta.vercel.app/courses')
-            .then(res => res.json())
-            .then(data => console.log(data))
-    })
-
-
-
-
 
     const coursesDetails = useLoaderData();
     const { name, category, details, image, rating, reviews, price, short_description, id } = coursesDetails;
