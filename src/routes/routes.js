@@ -10,6 +10,7 @@ import Home from "../components/Home/Home";
 import Login from "../components/Login/Login";
 import PasswordReset from "../components/Login/PasswordReset";
 import SignUp from "../components/SignUp/SignUp";
+import UserProfile from "../components/UserProfile/UserProfile";
 import Main from "../layout/Main";
 import PrivateRoute from "./PrivateRoute";
 
@@ -52,6 +53,9 @@ const routes = createBrowserRouter([
             },
             {
                 path: '/password-reset', element: <PasswordReset />
+            },
+            {
+                path: '/profile', element: <UserProfile />
             }
         ]
     }

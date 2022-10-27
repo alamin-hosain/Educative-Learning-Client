@@ -1,11 +1,12 @@
 import React, { useContext, useState } from 'react';
 import './Navbar.css';
 import logo from '../../assets/logo.png'
-import { Link, NavLink } from 'react-router-dom';
+import { Link, Navigate, NavLink, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../contexts/ContextProvider';
 import toast from 'react-hot-toast';
 
 const Navbar = () => {
+    const navigate = useNavigate();
     const { user, logOut } = useContext(AuthContext);
 
     const [toggle, setToggle] = useState(false)
@@ -22,6 +23,11 @@ const Navbar = () => {
     const handleMouseLeave = () => {
         setToggle(false)
     }
+
+    const handleClick = () => {
+        navigate('/profile')
+    }
+
 
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     return (
@@ -100,8 +106,7 @@ const Navbar = () => {
                             <li onClick={handleLogOut} className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400 cursor-pointer">Log Out</li>
 
                             {toggle ? <li className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400 cursor-pointer">{user.displayName}</li> : ''}
-                            <img onMouseEnter={handleMouseOver} onMouseLeave={handleMouseLeave} className='w-1/12 rounded-full cursor-pointer' src={user.photoURL} alt="" />
-
+                            <img onMouseEnter={handleMouseOver} onMouseLeave={handleMouseLeave} className='w-1/12 rounded-full cursor-pointer' src={user.photoURL} alt="" onClick={handleClick} />
                         </> :
 
                             <>
