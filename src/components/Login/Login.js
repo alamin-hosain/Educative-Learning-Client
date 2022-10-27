@@ -37,6 +37,7 @@ const Login = () => {
             .catch(e => setError(e))
     }
 
+
     const signInGithub = () => {
         signUpUsingGithub()
             .then(result => {
@@ -45,15 +46,16 @@ const Login = () => {
                 toast.success('Sign Up Using Github Success')
                 navigate(from, { replace: true });
             })
-            .catch(e => setError(e))
+            .catch(e => console.error(e))
     }
+
 
 
 
     return (
 
         <div className="px-0 py-20 mx-auto max-w-7xl sm:px-4 header">
-            {user?.uid ? <div className='text-4xl text-center'>Logged In but To Access Course Verify Email First then Login Again</div> :
+            {user?.uid ? <div className='text-4xl text-center'>Logged In but To Get Premium Access Verify Email First then Login Again</div> :
                 <>
                     <div className="w-full px-4 pt-5 pb-6 mx-auto mt-8 mb-6 bg-white rounded-none shadow-xl sm:rounded-lg sm:w-10/12 md:w-8/12 lg:w-6/12 xl:w-4/12 sm:px-6">
                         <h1 className="mb-4 text-lg font-semibold text-left text-gray-900">Log in to your account</h1>
@@ -85,8 +87,8 @@ const Login = () => {
                                         <span className="sr-only">Continue with</span> Google
                                     </div>
                                 </div>
-                                <div className="py-3 btn btn-icon btn-dark">
-                                    <div className='flex' onClick={signInGithub}>
+                                <div className="py-3 btn btn-icon btn-dark" onClick={signInGithub}>
+                                    <div className='flex' >
                                         <span className='text-white mr-2'><FaGithub /></span>
                                         <span className="sr-only">Continue with</span> Github
                                     </div>

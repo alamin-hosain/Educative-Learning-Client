@@ -70,7 +70,7 @@ const SignUp = () => {
                 const user = result.user;
                 console.log(user)
                 toast.success('Sign Up Using Github Success')
-                navigate(from, { replace: true });
+                navigate('/courses');
             })
             .catch(e => console.error(e))
     }
