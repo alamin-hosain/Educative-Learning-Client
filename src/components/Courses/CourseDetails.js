@@ -1,11 +1,11 @@
 import React, { useRef } from 'react';
-import { useLoaderData } from 'react-router-dom';
+import { Link, useLoaderData } from 'react-router-dom';
 import { useReactToPrint } from 'react-to-print';
 import './CourseDetails.css';
 
 const CourseDetails = () => {
     const coursesDetails = useLoaderData();
-    const { name, category, details, image, rating, reviews, price, short_description } = coursesDetails;
+    const { name, category, details, image, rating, reviews, price, short_description, id } = coursesDetails;
 
     const inputRef = useRef(null);
 
@@ -59,12 +59,12 @@ const CourseDetails = () => {
                         <span>{reviews}</span>
                         <span>Rating: {rating}</span>
                     </div>
-                    <a
-                        href="/"
+                    <Link
+                        to={`/checkout/${id}`}
                         aria-label=""
                         className="inline-flex items-center font-semibold transition-colors duration-200 text-deep-purple-accent-400 hover:text-deep-purple-800 bg-yellow-500 py-4 px-10 text-xl"
                     >
-                        Buy Now
+                        Get Premium Access
                         <svg
                             className="inline-block w-3 ml-2"
                             fill="currentColor"
@@ -72,7 +72,7 @@ const CourseDetails = () => {
                         >
                             <path d="M9.707,5.293l-5-5A1,1,0,0,0,3.293,1.707L7.586,6,3.293,10.293a1,1,0,1,0,1.414,1.414l5-5A1,1,0,0,0,9.707,5.293Z" />
                         </svg>
-                    </a>
+                    </Link>
                 </div>
             </div>
         </>

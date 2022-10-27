@@ -1,3 +1,11 @@
+# Project Features and Functionality
+
+**1. This is an ONlINE learning platform for Digital Learner**
+**2. You have to sign Up and login to Purchase any course you like **
+**3. For now you Will have Six category of course to learn from **
+**4. There's a FAQ page, You can get any of your queries answer there **
+**5. In Blog Section You will get information and blog topics covering related to the courses of the site **
+
 # This Project Build with These Library and Tools
 
 ## Live Link :

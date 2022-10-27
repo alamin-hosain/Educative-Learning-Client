@@ -1,6 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
 import Blog from "../components/Blog/Blog";
 import Category from "../components/Category/Category";
+import CheckOut from "../components/Courses/CheckOut";
 import CourseDetails from "../components/Courses/CourseDetails";
 import Courses from "../components/Courses/Courses";
 import ErrorPage from "../components/ErrorPage/ErrorPage";
@@ -26,22 +27,25 @@ const routes = createBrowserRouter([
             { path: '/login', element: <Login /> },
             { path: '/signup', element: <SignUp /> },
             {
-                path: '/courses', element: <PrivateRoute>
-                    <Courses />
-                </PrivateRoute>,
+                path: '/courses', element:
+                    <Courses />,
                 loader: () => fetch('http://localhost:5000/courses')
             },
             { path: '/faq', element: <Faq /> },
             { path: '/blog', element: <Blog /> },
             {
-                path: '/category/:id', element: <PrivateRoute>
-                    <Category />
-                </PrivateRoute>,
+                path: '/category/:id', element:
+                    <Category />,
                 loader: ({ params }) => fetch(`http://localhost:5000/category/${params.id}`)
             },
             {
-                path: '/course-details/:id', element: <PrivateRoute>
-                    <CourseDetails></CourseDetails>
+                path: '/course-details/:id', element:
+                    <CourseDetails></CourseDetails>,
+                loader: ({ params }) => fetch(`http://localhost:5000/courses/${params.id}`)
+            },
+            {
+                path: '/checkout/:id', element: <PrivateRoute>
+                    <CheckOut />
                 </PrivateRoute>,
                 loader: ({ params }) => fetch(`http://localhost:5000/courses/${params.id}`)
             }
