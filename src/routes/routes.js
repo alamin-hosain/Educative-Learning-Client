@@ -20,36 +20,36 @@ const routes = createBrowserRouter([
         path: '/', element: <Main />, errorElement: <ErrorPage />, children: [
             {
                 path: '/', element: <Home />,
-                loader: () => fetch('http://localhost:5000/category/02')
+                loader: () => fetch('https://b610-learning-platform-server-side-delta.vercel.app/category/02')
             },
             {
                 path: '/home', element: <Home />,
-                loader: () => fetch('http://localhost:5000/category/02')
+                loader: () => fetch('https://b610-learning-platform-server-side-delta.vercel.app/category/02')
             },
             { path: '/login', element: <Login /> },
             { path: '/signup', element: <SignUp /> },
             {
                 path: '/courses', element:
                     <Courses />,
-                loader: () => fetch('http://localhost:5000/courses')
+                loader: () => fetch('https://b610-learning-platform-server-side-delta.vercel.app/courses')
             },
             { path: '/faq', element: <Faq /> },
             { path: '/blog', element: <Blog /> },
             {
                 path: '/category/:id', element:
                     <Category />,
-                loader: ({ params }) => fetch(`http://localhost:5000/category/${params.id}`)
+                loader: ({ params }) => fetch(`https://b610-learning-platform-server-side-delta.vercel.app/${params.id}`)
             },
             {
                 path: '/course-details/:id', element:
                     <CourseDetails></CourseDetails>,
-                loader: ({ params }) => fetch(`http://localhost:5000/courses/${params.id}`)
+                loader: ({ params }) => fetch(`https://b610-learning-platform-server-side-delta.vercel.app/${params.id}`)
             },
             {
                 path: '/checkout/:id', element: <PrivateRoute>
                     <CheckOut />
                 </PrivateRoute>,
-                loader: ({ params }) => fetch(`http://localhost:5000/courses/${params.id}`)
+                loader: ({ params }) => fetch(`https://b610-learning-platform-server-side-delta.vercel.app/${params.id}`)
             },
             {
                 path: '/password-reset', element: <PasswordReset />
