@@ -118,7 +118,7 @@ const Navbar = () => {
                                 <li>
                                     <NavLink
                                         to="/signup"
-                                        className="inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide bg-[#098b99] text-white transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none hover:bg-[#00515a] hover:text-white"
+                                        className="inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide border border-teal-400 text-gray-900 transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none hover:bg-[#00515a] hover:text-white"
                                         aria-label="Sign up"
                                         title="Sign up"
                                     >
@@ -260,7 +260,7 @@ const Navbar = () => {
                                                 <li>
                                                     <NavLink
                                                         to="/signup"
-                                                        className="inline-flex items-center justify-center w-full h-12 px-6 font-medium tracking-wide text-white bg-[#098b99] transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-white hover:text-white  focus:shadow-outline focus:outline-none hover:bg-[#01535d] "
+                                                        className="inline-flex items-center justify-center w-full h-12 px-6 font-medium tracking-wide transition duration-200 rounded shadow-md bg-deep-purple-accent-400 focus:shadow-outline focus:outline-none bg-teal-200 text-gray-900 hover:bg-teal-500 hover:text-white"
                                                         aria-label="Sign up"
                                                         title="Sign up"
                                                     >

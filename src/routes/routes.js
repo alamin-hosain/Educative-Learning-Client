@@ -8,6 +8,7 @@ import ErrorPage from "../components/ErrorPage/ErrorPage";
 import Faq from "../components/Faq/Faq";
 import Home from "../components/Home/Home";
 import Login from "../components/Login/Login";
+import PasswordReset from "../components/Login/PasswordReset";
 import SignUp from "../components/SignUp/SignUp";
 import Main from "../layout/Main";
 import PrivateRoute from "./PrivateRoute";
@@ -48,6 +49,9 @@ const routes = createBrowserRouter([
                     <CheckOut />
                 </PrivateRoute>,
                 loader: ({ params }) => fetch(`http://localhost:5000/courses/${params.id}`)
+            },
+            {
+                path: '/password-reset', element: <PasswordReset />
             }
         ]
     }

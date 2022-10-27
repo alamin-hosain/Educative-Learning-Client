@@ -49,6 +49,7 @@ const Login = () => {
     }
 
 
+
     return (
 
         <div className="px-0 py-20 mx-auto max-w-7xl sm:px-4 header">
@@ -96,7 +97,7 @@ const Login = () => {
                     <p className="mb-4 text-xs text-center text-gray-400 text-xl space-x-2">
                         <Link to="/signup" className="text-purple-200 underline hover:text-white">Create an account</Link>
                         ·
-                        <Link href="#" className="text-purple-200 underline hover:text-white">Forgot password</Link>
+                        <Link to="/password-reset" className="text-purple-200 underline hover:text-white">Forgot password</Link>
                         ·
                         <Link to="/courses" className="text-purple-200 underline hover:text-white">Check Courses</Link>
                     </p>

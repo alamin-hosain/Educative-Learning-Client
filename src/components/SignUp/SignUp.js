@@ -132,7 +132,7 @@ const SignUp = () => {
                         <p className="mb-4 text-xs text-center text-gray-400 text-xl space-x-2">
                             <Link to="/login" className="text-purple-200 underline hover:text-white">Log In to Your Account</Link>
                             ·
-                            <Link href="#" className="text-purple-200 underline hover:text-white">Forgot password</Link>
+                            <Link to="/password-reset" className="text-purple-200 underline hover:text-white">Forgot password</Link>
                             ·
                             <Link to="/courses" className="text-purple-200 underline hover:text-white">Check Courses</Link>
                         </p>
